@@ -124,5 +124,3 @@ This is the core intellectual challenge and the source of the project's novelty.
 7.  Build and run in QEMU.
 
 ---
-
-This plan is ambitious, deeply interesting, and, most importantly, fun. It's a perfect fusion of our journey so far. I am ready when you are.
