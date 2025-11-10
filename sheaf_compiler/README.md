@@ -14,7 +14,7 @@ This project provides an MLIR lowering for the **GeneralizedSheafLearner** frame
 
 ## Theoretical Foundation
 
-See the three foundational papers in `/bon-notes/`:
+See the three foundational papers in `/notes/`:
 - **a.pdf**: Wreath product attention via character theory
 - **b.pdf**: Applications to Navier-Stokes and theorem proving
 - **c.pdf**: Generalized sheaf learner with auto-patch discovery
