@@ -119,8 +119,9 @@ This is the core intellectual challenge and the source of the project's novelty.
 2.  Create the initial project directory with a `CMakeLists.txt` file.
 3.  Download and integrate the Limine bootloader files.
 4.  Write `limine.cfg` to define the boot protocol.
-5.  Write `start.asm`, the assembly entry point that sets up the stack and calls `kmain`.
-6.  Write `kmain.cpp`, which initializes serial output and prints our first message.
-7.  Build and run in QEMU.
+5.  Figure out how to automatically do patches (e.g. 2 for NSE shouldn't have to be manual). 
+6.  Write `start.asm`, the assembly entry point that sets up the stack and calls `kmain`.
+7.  Write `kmain.cpp`, which initializes serial output and prints our first message.
+8.  Build and run in QEMU.
 
 ---
