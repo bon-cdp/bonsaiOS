@@ -1,35 +1,26 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
+# Build outputs
+build/
+*/build/
+*.o
+*.elf
+*.bin
 *.so
-.Python
+*.a
 
-# Virtual environments
-sheaf_compiler_venv/
-venv/
-env/
-ENV/
+# EDK2 build (external)
+edk2/
+!edk2_bootloader/
 
-# IDE
-.vscode/
-.idea/
+# GNU-EFI (external dependency)
+gnu-efi/
+
+# Editor/IDE
 *.swp
 *.swo
+*~
+.vscode/
+.idea/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Build artifacts
-*.o
-*.a
-build/
-dist/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# MLIR build artifacts (if any)
-*.ll
-*.bc

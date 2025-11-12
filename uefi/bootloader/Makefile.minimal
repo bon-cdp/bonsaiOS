@@ -1,0 +1,37 @@
+# Minimal UEFI Bootloader Makefile (No gnu-efi)
+
+CC = aarch64-linux-gnu-gcc
+LD = aarch64-linux-gnu-ld
+OBJCOPY = aarch64-linux-gnu-objcopy
+
+CFLAGS = -ffreestanding -fno-stack-protector -fpic -fshort-wchar \
+         -mgeneral-regs-only -Wall -Wextra
+
+TARGET = BOOTAA64.EFI
+
+all: $(TARGET)
+	@echo ""
+	@echo "=========================================="
+	@echo "BonsaiOS Minimal UEFI Bootloader Built!"
+	@echo "=========================================="
+	@ls -lh $(TARGET)
+	@echo ""
+
+start.o: start.S
+	$(CC) -c $< -o $@
+
+main_minimal.o: main_minimal.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bootloader.elf: start.o main_minimal.o
+	$(LD) -T link.lds -pie -nostdlib start.o main_minimal.o -o $@
+
+$(TARGET): bootloader.elf
+	$(OBJCOPY) -j .text -j .sdata -j .data -j .rodata \
+	           -j .dynamic -j .dynsym -j .rel* -j .rela* -j .reloc \
+	           --target=efi-app-aarch64 $< $@
+
+clean:
+	rm -f *.o *.elf $(TARGET)
+
+.PHONY: all clean
